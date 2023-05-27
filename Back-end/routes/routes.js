@@ -3,7 +3,7 @@ const router = express.Router();
 const Submission = require('../models/submission.js');
 
 // API endpoint to receive form data and store it in the database
-router.post('/api/submit', (req, res) => {
+router.post('/', (req, res) => {
   const submissionData = req.body;
   const submission = new Submission(submissionData);
   submission.save((error, savedSubmission) => {
@@ -17,7 +17,7 @@ router.post('/api/submit', (req, res) => {
 });
 
 // API endpoint to retrieve existing form submissions
-router.get('/api/get', (req, res) => {
+router.get('/', (req, res) => {
   Submission.find((error, submissions) => {
     if (error) {
       console.error('Error fetching submissions:', error);

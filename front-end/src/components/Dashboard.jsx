@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./common.css";
-import wallpaper from "../assets/gradient1.jpeg";
 import { Box, Flex, Input, Heading, Select } from "@chakra-ui/react";
 import TableContainerComp from "./TableContainer";
 import axios from "axios";
@@ -17,12 +16,7 @@ import {
   TableContainer,
 } from "@chakra-ui/react";
 
-const styles = {
-  background: `url(${wallpaper})`,
 
-  /* Additional background properties */
-};
-// let data = await axios.get(`https://mushy-toad-costume.cyclic.app/api`);
 function Dashboard() {
   const [submissions, setSubmissions] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -151,16 +145,16 @@ function Dashboard() {
   }
   @media only screen and (min-width: 411px) {
     width: 90vw;
-    height: 60vh;
+    height: 80vh;
   }
 
   @media only screen and (min-width: 768px) {
     width: 85vw;
-    height: 60vh;
+    height: 75vh;
   }
   @media only screen and (min-width: 1024px) {
     width: 80vw;
-    height: 65vh;
+    height: 70vh;
   }
   @media only screen and (min-width: 1280px) {
     width: 75vw;

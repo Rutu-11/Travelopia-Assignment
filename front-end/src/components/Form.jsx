@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import "./common.css";
-import wallpaper from "../assets/gradient1.jpeg";
 import { Box, Flex, Input, Heading, Select,useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const styles = {
-  background: `url(${wallpaper})`,
 
-  /* Additional background properties */
-};
 function Form() {
 
   const navigate = useNavigate();
@@ -177,20 +172,20 @@ export const MainContainer = styled.div`
     }
   }
   @media only screen and (min-width: 411px) {
-    width: 80vw;
+    width: 85vw;
     height: 90vh;
   }
 
   @media only screen and (min-width: 768px) {
-    width: 80vw;
+    width: 70vw;
     height: 80vh;
   }
   @media only screen and (min-width: 1024px) {
-    width: 80vw;
+    width: 55vw;
     height: 80vh;
   }
   @media only screen and (min-width: 1280px) {
-    width: 40vw;
+    width: 50vw;
     height: 80vh;
   }
 `;

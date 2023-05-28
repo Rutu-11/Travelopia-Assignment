@@ -56,12 +56,6 @@ describe("navbar tests",()=>{
 
 })
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-
 
 afterAll(() => {
   console.log("Final Score is", global.score);

@@ -46,3 +46,28 @@ For the backend development, I have chosen to use the following tech stack:
 3. When the second page is accessed, the backend retrieves the stored form submissions from the database and sends them back to the frontend for display.
 
 This tech stack and functionality combination allows for seamless communication between the frontend and backend, ensuring the storage and retrieval of form submissions in a user-friendly manner.
+
+
+The provided code appears to be a test suite written using the Jest testing framework for a React application. It tests the functionality of the Navbar component by simulating user interactions and checking the resulting changes in the URL.
+
+Here's a brief description of the implemented test cases:
+
+1. Test Case 1 - "onclicking home link the url should be changed":
+   - This test verifies that when the "Home" link in the Navbar is clicked, the URL should change to "/".
+   - It renders the Navbar component within a BrowserRouter component to enable routing functionality.
+   - It uses the screen utility from the testing-library/react library to interact with and query elements rendered in the test.
+   - The userEvent.click function simulates a click event on the "Home" link.
+   - The test then expects the window.location.pathname to be equal to "/".
+   - If the expectation is met, it increments the global score variable by 1.
+
+2. Test Case 2 - "onclicking about link the url should be changed":
+   - This test verifies that when the "Form" link in the Navbar is clicked, the URL should change to "/form".
+   - It follows a similar structure to Test Case 1, but interacts with the "Form" link and expects the window.location.pathname to be "/form".
+
+3. Test Case 3 - "onclicking contact link the url should be changed":
+   - This test verifies that when the "Dashboard" link in the Navbar is clicked, the URL should change to "/dashboard".
+   - It follows a similar structure to Test Case 1 and Test Case 2, but interacts with the "Dashboard" link and expects the window.location.pathname to be "/dashboard".
+
+The beforeEach and afterEach functions are used to perform cleanup tasks before and after each test case. The beforeAll and afterAll functions set up and finalize the global score variable and log the initial and final scores respectively.
+
+Overall, these test cases validate the expected behavior of the Navbar component when specific links are clicked, and keep track of a global score for test reporting purposes.

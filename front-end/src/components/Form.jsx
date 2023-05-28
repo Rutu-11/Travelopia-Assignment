@@ -33,7 +33,7 @@ function Form() {
     console.log(payload);
 
     let data = await axios.post(
-      `https://mushy-toad-costume.cyclic.app/api/submissions`,
+      `https://nightgown-cocoon.cyclic.app/api/submissions`,
       payload
     );
     if(data){

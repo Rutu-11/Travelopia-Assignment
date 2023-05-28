@@ -34,7 +34,7 @@ function Dashboard() {
 
   const fetchSubmissions = async () => {
     try {
-      const response = await axios.get(`https://mushy-toad-costume.cyclic.app/api?page=${currentPage}`);
+      const response = await axios.get(`https://nightgown-cocoon.cyclic.app/api?page=${currentPage}`);
       const { submissions, totalPages } = response.data;
       // console.log(response)
       setSubmissions(submissions);

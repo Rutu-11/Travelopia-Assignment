@@ -1,11 +1,14 @@
 .container {
-  background-image: url("../assets/wallpaper.webp");
+  /* background-image: url("../assets/wallpaper.webp"); */
   height: 155vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-top: -380px;
+  padding-top: 120px;
+  background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% );
 }
-
+.container img{
+  width: 70%;
+  margin: 10px auto;
+  height: 450px;
+}
 .navbar {
   /* background:#fff; */
   height: 80px;

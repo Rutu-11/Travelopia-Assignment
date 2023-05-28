@@ -6,12 +6,14 @@ function Navbar() {
     <Flex className="navbar">
       <Flex>
         <Heading
+        color={'#ff0084'}
+        letterSpacing= {"0.3rem"}
           as="h1"
           size="xl"
           noOfLines={1}
           display={["none", "none", "none", "block", "block", "block"]}
         >
-          Travelopia
+          Tra<span style={{color:"#fff",letterSpacing: "0.4rem"}}>vel</span>opia
         </Heading>
       </Flex>
       <Spacer display={["none", "none", "none", "block", "block", "block"]} />
@@ -19,11 +21,11 @@ function Navbar() {
         width={["100%", "100%", "100%", "40%", "40%", "40%"]}
         justify={"space-around"}
       >
-        <Link to={"/"}>Home</Link>
+        <Link to="/">Home</Link>
 
-        <Link to={"/form"}>Form</Link>
+        <Link to="/form">Form</Link>
 
-        <Link to={"/dashboard"}>Dashboard</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </Flex>
     </Flex>
   );

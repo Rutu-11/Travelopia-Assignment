@@ -4,6 +4,8 @@ import wallpaper from "../assets/gradient1.jpeg";
 import { Box, Flex, Input, Heading, Select,useToast } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
 const styles = {
   background: `url(${wallpaper})`,
 
@@ -33,7 +35,7 @@ function Form() {
     console.log(payload);
 
     let data = await axios.post(
-      `https://nightgown-cocoon.cyclic.app/api/submissions`,
+      `https://cute-rose-shrimp-kit.cyclic.app/api/submissions`,
       payload
     );
     if(data){
@@ -69,10 +71,10 @@ function Form() {
       className="form-container"
       display={["block", "block", "block", "flex", "flex"]}
     >
-      <Box w={["100%", "100%", "100%", "45%", "45%", "45%"]}>
-        <Heading as="h1" size="xl" noOfLines={1}>
+      <MainContainer>
+        <FormText as="h1" size="xl" noOfLines={1}>
           Fill Your Details
-        </Heading>
+        </FormText>
 
         <form action="" onSubmit={handleSubmit}>
           <Input
@@ -130,22 +132,70 @@ function Form() {
             htmlSize={4}
             width="auto"
             type="submit"
-            background={"red"}
+            background={"#ff0084"}
             required
+          
           />
         </form>
-      </Box>
-      <Box
-        w={["100%", "100%", "100%", "45%", "45%", "45%"]}
-        display={["none", "none", "none", "flex", "flex"]}
-      >
-        <img
-          src="https://tse3.mm.bing.net/th?id=OIP.Qyhne68aHpgFE0AJ_RllfwHaEk&pid=Api&P=0&h=180"
-          alt=""
-        />
-      </Box>
+      </MainContainer>
+      
     </Flex>
   );
 }
 
 export default Form;
+
+
+export const MainContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 50vw;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  @media only screen and (max-width: 320px) {
+    width: 80vw;
+    height: 90vh;
+    hr {
+      margin-bottom: 0.3rem;
+    }
+    h4 {
+      font-size: small;
+    }
+  }
+  @media only screen and (min-width: 360px) {
+    width: 80vw;
+    height: 90vh;
+    h4 {
+      font-size: small;
+    }
+  }
+  @media only screen and (min-width: 411px) {
+    width: 80vw;
+    height: 90vh;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 80vw;
+    height: 80vh;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 80vw;
+    height: 80vh;
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 40vw;
+    height: 80vh;
+  }
+`;
+
+
+const FormText = styled.h2`
+  margin: 3rem 0 2rem 0;
+`;

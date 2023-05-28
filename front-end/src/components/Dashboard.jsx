@@ -4,7 +4,7 @@ import wallpaper from "../assets/gradient1.jpeg";
 import { Box, Flex, Input, Heading, Select } from "@chakra-ui/react";
 import TableContainerComp from "./TableContainer";
 import axios from "axios";
-
+import styled from "styled-components";
 import {
   Table,
   Thead,
@@ -34,7 +34,7 @@ function Dashboard() {
 
   const fetchSubmissions = async () => {
     try {
-      const response = await axios.get(`https://nightgown-cocoon.cyclic.app/api?page=${currentPage}`);
+      const response = await axios.get(`https://cute-rose-shrimp-kit.cyclic.app/api?page=${currentPage}`);
       const { submissions, totalPages } = response.data;
       // console.log(response)
       setSubmissions(submissions);
@@ -50,7 +50,7 @@ function Dashboard() {
   };
   return (
     <Box className="table-container">
-        <Box>
+        <MainContainer>
         <Heading
           as="h1"
           size="xl"
@@ -60,8 +60,8 @@ function Dashboard() {
         >
           Dashboard
         </Heading>
-      <TableContainer w={"80%"} m={"auto"} background={"orange.100"}>
-        <Table variant="striped" colorScheme="teal">
+      <TableContainer w={"90%"} m={"auto"} >
+        <Table >
           {/* <TableCaption>Total Budget : {total}</TableCaption> */}
           <Thead>
             <Tr>
@@ -97,86 +97,82 @@ function Dashboard() {
          
         </Table>
       </TableContainer>
-       
-      </Box>
-      <Box className="button-div">
+       <TableContainer className="button-div">
         {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
           <button
             key={page}
             onClick={() => handlePageChange(page)}
             style={{
               fontWeight: page === currentPage ? 'bold' : 'normal',
-              background : page == currentPage? "blue" : 'white',
+              background : page == currentPage? "#ff0084" : 'white',
               color: page === currentPage ? 'white' : 'black',
             }}
           >
             {page}
           </button>
         ))}
-      </Box>
+      </TableContainer>
+      </MainContainer>
+      
     </Box>
   );
 }
 
+
+ const MainContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  @media only screen and (max-width: 320px) {
+    width: 80vw;
+    height: 90vh;
+    hr {
+      margin-bottom: 0.3rem;
+    }
+    h4 {
+      font-size: small;
+    }
+  }
+  @media only screen and (min-width: 360px) {
+    width: 80vw;
+    height: 90vh;
+    h4 {
+      font-size: small;
+    }
+  }
+  @media only screen and (min-width: 411px) {
+    width: 90vw;
+    height: 60vh;
+  }
+
+  @media only screen and (min-width: 768px) {
+    width: 85vw;
+    height: 60vh;
+  }
+  @media only screen and (min-width: 1024px) {
+    width: 80vw;
+    height: 65vh;
+  }
+  @media only screen and (min-width: 1280px) {
+    width: 75vw;
+    height: 65vh;
+  }
+`;
+
+
+const FormText = styled.h2`
+  margin: 3rem 0 2rem 0;
+`;
 export default Dashboard;
 
 
 
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// const Dashboard = () => {
-  // const [submissions, setSubmissions] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [totalPages, setTotalPages] = useState(0);
-
-  // useEffect(() => {
-  //   fetchSubmissions();
-  // }, [currentPage]);
-
-  // const fetchSubmissions = async () => {
-  //   try {
-  //     const response = await axios.get(`http://localhost:5000/api?page=${currentPage}`);
-  //     const { submissions, totalPages } = response.data;
-  //     console.log(response)
-  //     setSubmissions(submissions);
-  //     setTotalPages(totalPages);
-  //   } catch (error) {
-  //     console.error('Error fetching submissions:', error);
-  //   }
-  // };
-
-  // const handlePageChange = (page) => {
-  //   setCurrentPage(page);
-  // };
-
-//   return (
-//     <div>
-//       <h1>Submissions</h1>
-//       <ul>
-//         {submissions.map((submission) => {
-//           console.log("submission", submission)
-//           return (
-//           <li key={submission._id}>{submission.name}</li>
-//         )
-//       })
-//         }
-//       </ul>
-      // <div>
-      //   {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-      //     <button
-      //       key={page}
-      //       onClick={() => handlePageChange(page)}
-      //       style={{
-      //         fontWeight: page === currentPage ? 'bold' : 'normal',
-      //       }}
-      //     >
-      //       {page}
-      //     </button>
-      //   ))}
-      // </div>
-//     </div>
-//   );
-// };
-
-// export default Dashboard;

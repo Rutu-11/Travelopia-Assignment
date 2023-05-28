@@ -1,13 +1,17 @@
 .container {
   /* background-image: url("../assets/wallpaper.webp"); */
-  height: 155vh;
+  height: 100vh;
   padding-top: 120px;
   background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% );
+  
+}
+.container>div{
+  margin: auto;
 }
 .container img{
-  width: 70%;
+  width: 40%;
   margin: 10px auto;
-  height: 450px;
+  height: 250px;
 }
 .navbar {
   /* background:#fff; */
@@ -36,10 +40,12 @@
   background-image: url("../assets/gradient1.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 120px;
+  height:100vh;
 }
 
 .form-container > div {
-  margin: 140px auto;
+  margin: auto;
 }
 .form-container > div > h1 {
   color: orangered;
@@ -56,13 +62,14 @@ select {
   padding: 5px 20px;
 }
 
-.form-container > div img {
-  width: 100%;
-  height: 100%;
+.form-container div img {
+  width: 80%;
+  height: 400px;
 }
 
 .table-container {
   background-image: url("../assets/DWallpaper.jpeg");
+  /* background-image: linear-gradient(45deg,#141E30, #243B55); */
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px 0;
@@ -74,7 +81,7 @@ select {
 }
 
 table {
-  width: 70%;
+  width: 100%;
   margin: auto;
 }
 th {
@@ -97,7 +104,7 @@ th {
   background:#fff;
 }
 .button-div>button:active{
-  background:blueviolet;
+  background:#ff0084;
 }
 
 .notfound{

@@ -17,12 +17,14 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
+    "rn-pdf-reader-js": "^4.1.1",
+    "styled-components": "^5.3.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,5 +45,17 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "."
+  "homepage": ".",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.2",
+    "@babel/preset-react": "^7.22.3",
+    "@testing-library/dom": "^9.3.0",
+    "babel-jest": "^27.2.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "jest": "^27.2.4"
+  },
+  "transformIgnorePatterns": [
+    "/node_modules/",
+    "\\.svg$"
+  ]
 }

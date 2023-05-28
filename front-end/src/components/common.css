@@ -1,5 +1,108 @@
-.container{
-    background-image: url('../assets/wallpaper.webp');
-    height:300dvh;
-    background-size: 'cover'
+.container {
+  background-image: url("../assets/wallpaper.webp");
+  height: 155vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -380px;
+}
+
+.navbar {
+  /* background:#fff; */
+  height: 80px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  color: white;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+}
+.navbar > div {
+  margin-left: 25px;
+  flex-wrap: wrap;
+}
+
+.navbar > div > a,
+.navbar > div > p {
+  font-weight: 900;
+  font-size: larger;
+}
+
+.form-container {
+  background-image: url("../assets/gradient1.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-container > div {
+  margin: 140px auto;
+}
+.form-container > div > h1 {
+  color: orangered;
+  text-align: center;
+  margin-bottom: 20px;
+}
+form {
+  width: 60%;
+  margin: auto;
+}
+.form-container > div input,
+select {
+  margin-bottom: 20px;
+  padding: 5px 20px;
+}
+
+.form-container > div img {
+  width: 100%;
+  height: 100%;
+}
+
+.table-container {
+  background-image: url("../assets/DWallpaper.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+    height: 100vh;
+}
+
+.table-container > div {
+  margin: 50px auto;
+}
+
+table {
+  width: 70%;
+  margin: auto;
+}
+th {
+  font-size: 50px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.button-div{
+  width: 70%;
+  margin: auto;
+}
+
+.button-div>button{
+  /* padding: 10px 15px; */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px;
+  background:#fff;
+}
+.button-div>button:active{
+  background:blueviolet;
+}
+
+.notfound{
+  width: 100%;
+  height: 100%;
+
+}
+.notfound>img{
+  width: 100%;
+  height: 100%;
 }

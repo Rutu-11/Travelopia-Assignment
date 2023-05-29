@@ -24,13 +24,7 @@ function Signin() {
             user.push(Userdata.data);
             localStorage.setItem("userDetail", JSON.stringify(user[0]));
             localStorage.setItem("flag", true);
-            // dispatch({
-            //   type: "LOGIN_SUCCESS",
-            //   payload: Userdata.data,
-            // });
-            console.log(Userdata.data);
-            // navigate("/");
-            window.open('/')
+            window.open("/");
           } catch {
             console.log("error");
           }

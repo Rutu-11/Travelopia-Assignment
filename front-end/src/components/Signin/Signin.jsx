@@ -21,11 +21,12 @@ function Signin() {
                 },
               }
             );
+            navigate("/");
             user.push(Userdata.data);
             localStorage.setItem("userDetail", JSON.stringify(user[0]));
             localStorage.setItem("flag", true);
-            window.location.href="../Home.jsx"
-            // window.open("/");
+            // window.location.href="../Home.jsx"
+            
           } catch {
             console.log("error");
           }

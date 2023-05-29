@@ -8,6 +8,17 @@
 .container>div{
   margin: auto;
 }
+.container h1{
+  font-size: 2.5rem;
+  color: #ff0084;
+  margin-top: 5rem;
+  margin-bottom: -6rem;
+  text-align: center;
+}
+.container h1 span{
+  color:#fff;
+  font-weight: 600;
+}
 .container img{
   width: 40%;
   margin: 10px auto;
@@ -122,4 +133,11 @@ th {
 .notfound>img{
   width: 100%;
   height: 100%;
+}
+
+@media only screen and (max-width:800px){
+  .container h1{
+    size: .1rem;
+    margin: .2rem;
+  }
 }

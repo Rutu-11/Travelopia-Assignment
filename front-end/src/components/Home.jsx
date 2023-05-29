@@ -2,12 +2,20 @@ import React from "react";
 import "./common.css";
 import { Heading } from "@chakra-ui/react";
 import styled from "styled-components";
-
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 function Home() {
+
+  const { name, email, picture,given_name } = JSON.parse(localStorage.getItem("userDetail")) || {};
+  const text = useTypewriter({
+    words: [`Wecome to Travelopia`],
+    loop: {},
+  });
+
   return <div className="container">
     <MainContainer>
-    <Heading as="h1" size={["m","l","l","xl","xl"]} color={'white'} m={'auto'} w={'65%'}textAlign={'center'} >Travel far, travel wide, travel deep, and you'll discover the true beauty of this world.</Heading>
-    <img src="https://media.giphy.com/media/w4gNrkGxMcBig/giphy.gif" alt="" />
+    <Heading as="h1"color="white" size={'xxl'}>Hey <span>{given_name}</span>! {text[0]} </Heading>
+    <Heading as="h2" size={["m","l","l","xl","xl"]} marginTop={'-15px'} color={'white'} m={'auto'} w={'65%'}textAlign={'center'} >Travel far, travel wide, travel deep, and you'll discover the true beauty of this world.</Heading>
+
   </MainContainer>;
   </div>
 }

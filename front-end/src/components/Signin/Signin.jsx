@@ -48,8 +48,8 @@ function Signin() {
                              <h1>Sign In With Google</h1>
                              <h3>Your Credentials are secure with us</h3>
                              <GoogleLoginButton onClick={loging} style={{borderRadius:"50px",padding:"0 20px", width:"70%", margin:"20px auto"}}/>
-                             <p >By clicking on sign-up, you agree to Bookstore's's Terms and Conditions of Use.</p>
-                             <p>To learn more about how Bookstore collects, uses, shares and protects your personal data, please see Bookstore's Privacy Policy</p>
+                             <p >By clicking on sign-up, you agree to Travelopia's's Terms and Conditions of Use.</p>
+                             <p>To learn more about how Travelopia collects, uses, shares and protects your personal data, please see Travelopia's Privacy Policy</p>
                          </div>
                          <div>
                          <i class="fa-solid fa-book-open-reader"></i>

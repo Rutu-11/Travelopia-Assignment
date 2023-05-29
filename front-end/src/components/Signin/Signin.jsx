@@ -24,7 +24,8 @@ function Signin() {
             user.push(Userdata.data);
             localStorage.setItem("userDetail", JSON.stringify(user[0]));
             localStorage.setItem("flag", true);
-            window.open("/");
+            window.location.href="../Home.jsx"
+            // window.open("/");
           } catch {
             console.log("error");
           }

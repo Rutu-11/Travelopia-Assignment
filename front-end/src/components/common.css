@@ -30,12 +30,19 @@
   flex-wrap: wrap;
 }
 
-.navbar > div > a,
+.navbar > div a,
 .navbar > div > p {
   font-weight: 900;
   font-size: larger;
 }
-
+.login img{
+  width:40px;
+  border-radius:50%;
+}
+.login span{
+  font-size: 22px;
+  cursor: pointer;
+}
 .form-container {
   background-image: url("https://tse2.mm.bing.net/th?id=OIP.ewRfMU-58Iustx-NiDinuAHaEo&pid=Api&P=0&h=180");
   background-repeat: no-repeat;

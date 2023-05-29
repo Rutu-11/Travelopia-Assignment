@@ -5,15 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter } from 'react-router-dom';
+import { GoogleOAuthProvider } from "@react-oauth/google";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <GoogleOAuthProvider clientId="298084135748-rgc2iiaigr7m9033jvinblptpnjvrggv.apps.googleusercontent.com">
     <ChakraProvider>
       <BrowserRouter>
         <App />
     </BrowserRouter>
     </ChakraProvider>
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
 

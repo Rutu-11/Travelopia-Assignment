@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Box, Flex, Spacer, Heading } from "@chakra-ui/react";
 function Navbar() {
+  const[url, setUrl] = useState('');
+  const [userName, setUserName] = useState('')
+  const { name, email, picture,given_name } = JSON.parse(localStorage.getItem("userDetail")) || {};
+
+  function logout(){
+    const { email, user_id } = localStorage.getItem('userDetail');
+    localStorage.removeItem("userDetail");
+    localStorage.removeItem("flag");
+    localStorage.removeItem("token");
+    window.open("/");
+  }
+
+  useEffect(()=>{
+    setUserName(given_name)
+    setUrl(picture)
+  },[name])
   return (
     <Flex className="navbar">
       <Flex>
@@ -26,6 +42,18 @@ function Navbar() {
         <Link to="/form">Form</Link>
 
         <Link to="/dashboard">Dashboard</Link>
+
+        <Flex className="login">
+          {name ? (
+            <>
+            <img className="userImg" src={url} alt={name} />
+            <span>{userName}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style={{curser:'pointer'}} onClick={logout}>Logout</span>
+            </>
+          ) : (
+            <Link to={"/signin"}>Signin</Link>
+          )}
+        </Flex>
       </Flex>
     </Flex>
   );

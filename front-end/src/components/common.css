@@ -51,8 +51,9 @@
   border-radius:50%;
 }
 .login span{
-  font-size: 22px;
+  font-size: larger;
   cursor: pointer;
+  font-weight: 900;
 }
 .form-container {
   background-image: url("https://tse2.mm.bing.net/th?id=OIP.ewRfMU-58Iustx-NiDinuAHaEo&pid=Api&P=0&h=180");

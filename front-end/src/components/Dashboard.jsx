@@ -4,6 +4,7 @@ import { Box, Flex, Input, Heading, Select } from "@chakra-ui/react";
 import TableContainerComp from "./TableContainer";
 import axios from "axios";
 import styled from "styled-components";
+import { CSVLink, CSVDownload } from "react-csv";
 import {
   Table,
   Thead,
@@ -39,7 +40,9 @@ function Dashboard() {
       console.error('Error fetching submissions:', error);
     }
   };
-
+const loadData = ()=>{
+  
+}
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
@@ -50,13 +53,14 @@ function Dashboard() {
         <MainContainer>
         <Heading
           as="h1"
-          size="xl"
+          size="l"
           noOfLines={1}
           textAlign={'center'}
           mb={'10px'}
         >
           Dashboard
         </Heading>
+        <CSVLink data={submissions} onClick={()=>{}} >Export Data</CSVLink>
       <TableContainer w={"90%"} m={"auto"} >
         <Table >
           {/* <TableCaption>Total Budget : {total}</TableCaption> */}
@@ -132,7 +136,7 @@ function Dashboard() {
   letter-spacing: 0.4rem;
   @media only screen and (max-width: 320px) {
     width: 80vw;
-    height: 90vh;
+    height: 70vh;
     hr {
       margin-bottom: 0.3rem;
     }
@@ -142,14 +146,14 @@ function Dashboard() {
   }
   @media only screen and (min-width: 360px) {
     width: 80vw;
-    height: 90vh;
+    height: 70vh;
     h4 {
       font-size: small;
     }
   }
   @media only screen and (min-width: 411px) {
     width: 90vw;
-    height: 80vh;
+    height: 75vh;
   }
 
   @media only screen and (min-width: 768px) {

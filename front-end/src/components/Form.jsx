@@ -31,7 +31,7 @@ function Form() {
     console.log(payload);
 
     let data = await axios.post(
-      `https://cute-rose-shrimp-kit.cyclic.app/api/submissions`,
+      `https://vivacious-lime-bandanna.cyclic.app/api/submissions`,
       payload
     );
     if (data) {

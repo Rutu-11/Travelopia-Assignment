@@ -24,13 +24,16 @@ function Dashboard() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
   const [startIndex, setStartIndex] = useState(0); // Starting index of submissions on the current page
+  const [data, setData] = useState([]);
+
   useEffect(() => {
     fetchSubmissions();
+    loadData();
   }, [currentPage]);
 
   const fetchSubmissions = async () => {
     try {
-      const response = await axios.get(`https://cute-rose-shrimp-kit.cyclic.app/api?page=${currentPage}`);
+      const response = await axios.get(`https://vivacious-lime-bandanna.cyclic.app/api?page=${currentPage}`);
       const { submissions, totalPages } = response.data;
       // console.log(response)
       setSubmissions(submissions);
@@ -40,8 +43,16 @@ function Dashboard() {
       console.error('Error fetching submissions:', error);
     }
   };
-const loadData = ()=>{
-  
+const loadData =async ()=>{
+    try{
+        let res = await axios.get('https://vivacious-lime-bandanna.cyclic.app/api/csv');
+        const data = res.data.submissions;
+        console.log('data',data)
+        setData(data);
+    }
+    catch(e){
+
+    }
 }
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -60,7 +71,7 @@ const loadData = ()=>{
         >
           Dashboard
         </Heading>
-        <CSVLink data={submissions} onClick={()=>{}} >Export Data</CSVLink>
+        <CSVLink data={data} onClick={()=>{}} >Export Data</CSVLink>
       <TableContainer w={"90%"} m={"auto"} >
         <Table >
           {/* <TableCaption>Total Budget : {total}</TableCaption> */}

@@ -15,6 +15,7 @@ import {
   TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
+import Navbar from "./Navbar";
 
 
 function Dashboard() {
@@ -43,6 +44,8 @@ function Dashboard() {
     setCurrentPage(page);
   };
   return (
+    <> 
+    <Navbar/>
     <Box className="table-container">
         <MainContainer>
         <Heading
@@ -109,6 +112,7 @@ function Dashboard() {
       </MainContainer>
       
     </Box>
+    </>
   );
 }
 

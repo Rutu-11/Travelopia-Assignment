@@ -4,6 +4,7 @@ import { GoogleLoginButton } from 'react-social-login-buttons'
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import Navbar from "../Navbar"
 // import {IoBookSharp} from 'react-icons/io'
 function Signin() {
     const navigate = useNavigate()
@@ -35,6 +36,7 @@ function Signin() {
       
   return (
     <>
+    <Navbar/>
        <div className="outer">
                 <div className="overlay-inner" >
                 {/* <button className="close" onClick={onClose}><i class="fas fa-times"></i></button> */}

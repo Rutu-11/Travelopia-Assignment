@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./common.css";
-import { Box, Flex, Input, Heading, Select } from "@chakra-ui/react";
-import TableContainerComp from "./TableContainer";
+import { Box, Flex, Heading } from "@chakra-ui/react";
+// import TableContainerComp from "./TableContainer";
 import axios from "axios";
 import styled from "styled-components";
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink } from "react-csv";
 import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
 } from "@chakra-ui/react";
 import Navbar from "./Navbar";
@@ -25,7 +23,7 @@ function Dashboard() {
   const [totalPages, setTotalPages] = useState(0);
   const [startIndex, setStartIndex] = useState(0); // Starting index of submissions on the current page
   const [data, setData] = useState([]);
-
+  const [totalBudget, setTotalBudget] = useState(0);
   useEffect(() => {
     fetchSubmissions();
     loadData();
@@ -71,10 +69,12 @@ const loadData =async ()=>{
         >
           Dashboard
         </Heading>
-        <CSVLink data={data} onClick={()=>{}} >Export Data</CSVLink>
+        
+        <Flex w='100%' h='50px' m='auto' justify={'center'} align={'center'} >
+          <CSVLink  data={data} style={{"color":"#fff", letterSpacing:".1rem", fontWeight:"bolder",textAlign:'right' }} >Download Data</CSVLink>
+        </Flex>
       <TableContainer w={"90%"} m={"auto"} >
         <Table >
-          {/* <TableCaption>Total Budget : {total}</TableCaption> */}
           <Thead>
             <Tr>
               <Th>Sr. No.</Th>
@@ -83,6 +83,7 @@ const loadData =async ()=>{
               <Th>Destination</Th>
               <Th>Traveller's Count</Th>
               <Th>Budget per Person</Th>
+              <Th>Total Budget</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -94,6 +95,7 @@ const loadData =async ()=>{
                 travellerCount,
                 budgetPerPerson,
               } = submission;
+              // setTotalBudget(travellerCount*budgetPerPerson)
               return (
                 <Tr key={submission._id}>
                   <Td>{startIndex + ind + 1}</Td>
@@ -101,7 +103,8 @@ const loadData =async ()=>{
                   <Td>{email}</Td>
                   <Td>{destination}</Td>
                   <Td>{travellerCount}</Td>
-                  <Td>{budgetPerPerson}</Td>
+                  <Td>{"$"+budgetPerPerson}</Td>
+                  <Td>{"$"+travellerCount * budgetPerPerson}</Td>
                 </Tr>
               );
             })}
@@ -116,7 +119,7 @@ const loadData =async ()=>{
             onClick={() => handlePageChange(page)}
             style={{
               fontWeight: page === currentPage ? 'bold' : 'normal',
-              background : page == currentPage? "#ff0084" : 'white',
+              background : page === currentPage? "#ff0084" : 'white',
               color: page === currentPage ? 'white' : 'black',
             }}
           >
@@ -145,7 +148,7 @@ const loadData =async ()=>{
   border-radius: 10px;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 360px) {
     width: 80vw;
     height: 70vh;
     hr {
@@ -181,10 +184,6 @@ const loadData =async ()=>{
   }
 `;
 
-
-const FormText = styled.h2`
-  margin: 3rem 0 2rem 0;
-`;
 export default Dashboard;
 
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Box, Flex, Spacer, Heading } from "@chakra-ui/react";
+import { Flex, Spacer, Heading } from "@chakra-ui/react";
 function Navbar() {
   const[url, setUrl] = useState('');
   const [userName, setUserName] = useState('')
-  const { name, email, picture,given_name } = JSON.parse(localStorage.getItem("userDetail")) || {};
+  const { name, picture,given_name } = JSON.parse(localStorage.getItem("userDetail")) || {};
 
   function logout(){
     const { email, user_id } = localStorage.getItem('userDetail');
@@ -18,6 +18,7 @@ function Navbar() {
     setUserName(given_name)
     setUrl(picture)
   },[name])
+  
   return (
     <Flex className="navbar">
       <Flex>
@@ -29,7 +30,7 @@ function Navbar() {
           noOfLines={1}
           display={["none", "none", "none", "block", "block", "block"]}
         >
-          Tra<span style={{color:"#fff",letterSpacing: "0.4rem"}}>vel</span>opia
+          Tra<span style={{color:"#fff",letterSpacing: "0.4rem", fontWeight:"bold"}}>vel</span>opia
         </Heading>
       </Flex>
       <Spacer display={["none", "none", "none", "block", "block", "block"]} />

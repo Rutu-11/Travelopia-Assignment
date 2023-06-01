@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./common.css";
-import { Box, Flex, Input, Heading, Select, useToast, Spacer } from "@chakra-ui/react";
+import { Flex, Input, Heading, Select, useToast, Spacer } from "@chakra-ui/react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
@@ -15,7 +15,6 @@ function Form() {
   const [totalNumber, setTotalNumber] = useState("");
   const [budgetPerPerson, setBudgetPerPerson] = useState("");
   const [budget, setBudget] = useState(0);
-  const [formData, setFormData] = useState({});
 
   
   // Function to handle form submission
@@ -39,7 +38,7 @@ function Form() {
         title: "Sucessfully Submitted.",
         description: "Form submitted sucessfully.",
         status: "success",
-        duration: 1000,
+        duration: 3000,
         isClosable: true,
       });
       navigate("/dashboard");
@@ -48,7 +47,7 @@ function Form() {
         title: "Coulden't Submit.",
         description: "Error Occured.",
         status: "error",
-        duration: 1000,
+        duration: 3000,
         isClosable: true,
       });
     }
@@ -73,8 +72,9 @@ useEffect(()=>{
         display={["block", "block", "block", "flex", "flex"]}
       >
         <MainContainer>
-          <FormText as="h1" size="xl" noOfLines={1}>
-            Fill Your Details
+          <FormText as="h1"  size={["m","l","xl","xl","xl"]} noOfLines={1}>
+          Discover the Exciting Travel Adventures with Travelopia
+
           </FormText>
 
           <form action="" onSubmit={handleSubmit}>
@@ -128,7 +128,7 @@ useEffect(()=>{
               type="number"
             />
 
-            <Flex>
+            <Flex display={['block','block','flex','flex','flex']}>
               <Input
                 variant="filled"
                 htmlSize={4}
@@ -140,9 +140,9 @@ useEffect(()=>{
 
               <Spacer/>
               <Heading
-                as="h1"
+                as="h2"
                 size="l"
-                noOfLines={1}
+               
                 textAlign={"center"}
                 mb={"10px"}
                 color={"#fff"}
@@ -170,39 +170,78 @@ export const MainContainer = styled.div`
   border-radius: 10px;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  @media only screen and (max-width: 320px) {
-    width: 80vw;
-    height: 90vh;
+  @media only screen and (max-width: 360px) {
+    width: 90vw;
+    height: 70vh;
+    h1{
+      font-size:.8rem;
+    }
     hr {
       margin-bottom: 0.3rem;
     }
     h4 {
       font-size: small;
     }
+    input,select{
+      height:30px;
+      width:95%;
+    }
   }
   @media only screen and (min-width: 360px) {
-    width: 80vw;
-    height: 90vh;
+    width: 90vw;
+    height: 80vh;
+    h1{
+      font-size:.8rem;
+    }
+    input,select{
+      height:35px;
+      // width:95%;
+    }
     h4 {
       font-size: small;
     }
   }
   @media only screen and (min-width: 411px) {
-    width: 85vw;
-    height: 90vh;
+    width: 95vw;
+    height: 80vh;
+    h1{
+      font-size:1.2rem;
+    }
+    input,select{
+      height:35px;
+      // width:75%;
+    }
   }
 
   @media only screen and (min-width: 768px) {
-    width: 70vw;
+    width: 95vw;
     height: 80vh;
+    h1{
+      font-size:1.2rem;
+    }
+    input,select{
+      height:40px;
+    }
   }
   @media only screen and (min-width: 1024px) {
-    width: 55vw;
+    width: 65vw;
     height: 80vh;
+    h1{
+      font-size:1.5rem;
+    }
+    input,select{
+      height:40px;
+    }
   }
   @media only screen and (min-width: 1280px) {
     width: 50vw;
     height: 80vh;
+    h1{
+      font-size:1.5rem;
+    }
+    input,select{
+      height:40px;
+    }
   }
 `;
 

@@ -17,8 +17,8 @@ function Home() {
   <Navbar/>
   <div className="container">
     <MainContainer>
-    <Heading as="h1"color="white" size={'xxl'}>Hey <span>{given_name}</span>! {text[0]} </Heading>
-    <Heading as="h2" size={["m","l","l","xl","xl"]} marginTop={'-15px'} color={'white'} m={'auto'} w={'65%'}textAlign={'center'} >Travel far, travel wide, travel deep, and you'll discover the true beauty of this world.</Heading>
+    <Heading as="h1"color="white" size={'xl'}>Hey <span>{given_name}</span>! {text[0]} </Heading>
+    <Heading as="h2" size={["m","l","xl","xl","xl"]} marginTop={'10px'}  color={'white'} m={'auto'} w={'65%'}textAlign={'center'} >Embrace the Extraordinary: Travelopia invites you to unlock a world of awe-inspiring travel adventures that will leave you breathless.</Heading>
 
   </MainContainer>;
   </div>
@@ -41,43 +41,76 @@ export const MainContainer = styled.div`
   border-radius: 10px;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 360px) {
     width: 80vw;
-    height: 90vh;
-    hr {
-      margin-bottom: 0.3rem;
+    height: 70vh;
+    h1{
+      font-size:small;
+    }
+    h2 {
+      font-size:small;
     }
     h4 {
-      font-size: small;
+      font-size: large;
     }
   }
   @media only screen and (min-width: 360px) {
     width: 80vw;
-    height: 80vh;
-    h4 {
+    height: 70vh;
+    h1{
+      font-size:large;
+      margin-bottom:-1rem
+    }
+    h2 {
       font-size: small;
     }
   }
   @media only screen and (min-width: 411px) {
+
     width: 80vw;
-    height: 80vh;
+    height: 70vh;
+    h1{
+      font-size:x-large;
+       margin-bottom:-.8rem
+    }
+    h2 {
+      font-size: large;
+    }
   }
 
   @media only screen and (min-width: 768px) {
     width: 80vw;
     height: 80vh;
+    h1{
+      font-size:xx-large;
+      margin-bottom:-1rem
+    
+    }
+    h2 {
+      font-size: x-large;
+    }
   }
   @media only screen and (min-width: 1024px) {
     width: 80vw;
     height: 80vh;
+    h1{
+      font-size:x-large;
+      margin-bottom:-1.2rem
+    }
+    h2 {
+      font-size: xx-large;
+    }
   }
   @media only screen and (min-width: 1280px) {
     width: 65vw;
     height: 80vh;
+    h1{
+      font-size:xx-large;
+      margin-bottom:-1.5rem
+    }
+    h2 {
+      font-size: xx-large;
+    }
   }
 `;
 
-
-const FormText = styled.h2`
-  margin: 3rem 0 2rem 0;
-`;

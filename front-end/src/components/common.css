@@ -1,3 +1,16 @@
+/* Animation zoomIn */
+@keyframes zoomIn{
+  0%{
+     transform: scale(0);
+     opacity: 0;
+  }
+  100%{
+    transform: scale(1);
+     opacity: 1;
+  }
+}
+
+
 .container {
   background-image: url("https://pi-ltsp.net/images/desktop-background.png");
   height: 100vh;
@@ -7,6 +20,9 @@
 }
 .container>div{
   margin: auto;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 1s, 2s;
 }
 .container h1{
   font-size: 2.5rem;
@@ -65,11 +81,17 @@
 
 .form-container > div {
   margin: auto;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 1s, 2s;
 }
-.form-container > div > h1 {
-  color: orangered;
+.form-container h1 {
+  color: #ff0084;
+  font-weight: 900;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 20px;
+  
 }
 form {
   width: 60%;
@@ -97,6 +119,9 @@ select {
 
 .table-container > div {
   margin: 50px auto;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 1s, 2s;
 }
 
 table {
@@ -104,22 +129,37 @@ table {
   margin: auto;
 }
 th {
-  font-size: 50px;
+  font-size: 2rem;
   font-weight: 800;
   color: #fff;
 }
-
+.table-container>div a:hover{
+  box-shadow:0 0 10px white;
+  padding: 5px 10px;
+  border-radius:10px;
+  color:orangered;
+  transition: 800ms linear; 
+  transform: scale(1.1);
+}
 .button-div{
   width: 70%;
   margin: auto;
 }
-
+.table-container>div table tr:hover{
+  transition: 800ms linear; 
+  /* transform: scale(1.1);
+  background-color: #fff; */
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+}
 .button-div>button{
   /* padding: 10px 15px; */
-  width: 50px;
-  height: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
-  margin: 20px;
+  margin: 10px;
   background:#fff;
 }
 .button-div>button:active{
@@ -136,9 +176,9 @@ th {
   height: 100%;
 }
 
-@media only screen and (max-width:800px){
+/* @media only screen and (max-width:800px){
   .container h1{
     size: .1rem;
     margin: .2rem;
   }
-}
+} */

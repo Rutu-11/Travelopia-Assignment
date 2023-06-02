@@ -29,7 +29,7 @@ For the backend development, I have chosen to use the following tech stack:
 - Database: MongoDB
 
 # Functionality:
-1. The backend provides two JSON API endpoints:
+1. The backend provides three JSON API endpoints:
 
    a. Endpoint 1: 
       - Method: POST
@@ -38,8 +38,13 @@ For the backend development, I have chosen to use the following tech stack:
     
    b. Endpoint 2:
       - Method: GET
-      - URL: /api/submissions
-      - Functionality: Retrieves the existing form submissions from the database and sends them back to the frontend.
+      - URL: /api
+      - Functionality: Retrieves first five  existing form submissions from the database and sends them back to the frontend along with totalPages.
+
+ b. Endpoint 2:
+      - Method: GET
+      - URL: /api/csv
+      - Functionality: Retrieves all the existing form submissions from the database and sends them back to the frontend.
 
 2. Upon receiving data from the frontend, the backend stores it in the chosen MongoDB database.
 

@@ -42,9 +42,13 @@ For the backend development, I have chosen to use the following tech stack:
       - Functionality: Retrieves first five  existing form submissions from the database and sends them back to the frontend along with totalPages.
 
  c. Endpoint 3:
-         - Method: GET
-         - URL: /api/csv
-         - Functionality: Retrieves all the existing form submissions from the database and sends them back to the frontend.
+ 
+            - Method: GET
+
+            - URL: /api/csv
+
+            - Functionality: Retrieves all the existing form submissions from the database and sends them back to the frontend.
+         
          
 
 2. Upon receiving data from the frontend, the backend stores it in the chosen MongoDB database.
